@@ -1,0 +1,23 @@
+<!DOCTYPE HTML>
+<html>
+
+<body>
+
+  <script>
+  function sumTriangularNumbers(n) {
+    let sum = 0;
+    let triNumber = 0;
+    if (n < 0) {return 0};
+    for (let i = 1; i <= n; i++) {
+      sum += i;
+      triNumber += sum;
+    }
+    return triNumber;
+  }
+  let n = prompt ('vvedite n', 'n');
+  alert (sumTriangularNumbers(n));
+  </script>
+
+</body>
+
+</html>
