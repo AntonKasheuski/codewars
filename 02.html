@@ -1,0 +1,24 @@
+<!DOCTYPE HTML>
+<html>
+
+<body>
+
+  <script>
+  function digital_root(n) {
+    let stringN = String(n);
+    do {
+      let sum = 0;
+      for (let i = 0; i < stringN.length; i++) {
+        sum += Number(stringN[i]);
+      }
+      stringN = String(sum);
+    } while (stringN.length > 1);
+    return (Number(stringN));
+  }
+  
+  alert(digital_root(456));
+  </script>
+
+</body>
+
+</html>
