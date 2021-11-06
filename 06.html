@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+<html>
+
+<body>
+
+  <script>
+  var moveZeros = function (arr) {
+    let newArr = [];
+    zerosCount = 0;
+    for (let i = 0; i < arr.length; i++) {
+      if (arr[i] !== 0) {
+          newArr.push(arr[i]);
+      } else {zerosCount++}
+    }
+    for (let j = 0; j < zerosCount; j++) {
+      newArr.push(0);
+    }
+    return(newArr);
+  }
+
+  alert (moveZeros([1,2,0,1,0,1,0,3,0,1]));
+  </script>
+
+</body>
+
+</html>
