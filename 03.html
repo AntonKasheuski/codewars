@@ -1,0 +1,25 @@
+<!DOCTYPE HTML>
+<html>
+
+<body>
+
+  <script>
+  function descendingOrder(n){
+    let stringN = String(n);
+    let result = "";
+    for (let j=9; j >= 0; j--) {
+        for (let i = 0; i < stringN.length; i++) {
+          if (stringN[i] == j) {
+            result += stringN[i]
+          } 
+        }
+      }
+    return (Number(result));
+  }
+  
+  alert(descendingOrder(1021));
+  </script>
+
+</body>
+
+</html>
