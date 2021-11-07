@@ -1,0 +1,29 @@
+<!DOCTYPE HTML>
+<html>
+
+<body>
+
+  <script>
+  function sortArray(array) {
+    let oddArray = array.filter(function(n) {
+      const remainder = n % 2
+      return remainder === 1 || remainder === -1
+    })
+
+    oddArray.sort((a, b) => a - b);
+
+    for (let i = 0; i < array.length; i++) {
+      if (array[i] % 2 == 1 || array[i] % 2 == -1) {
+        array[i] = oddArray.shift();
+      }
+    }
+
+    return array;
+  }
+
+  alert(sortArray([11, -13, 25, 32, -5, -16, -28, 29, -30, -34, 3]));
+  </script>
+
+</body>
+
+</html>
