@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html>
+
+<body>
+
+  <script>
+  function duplicateCount(text) {
+    let textArr = [];
+    for (let i = 0; i < text.length; ++i) {
+      textArr.push(text[i])
+    }
+    
+    let count = 0;
+    for (let i = 0; i < textArr.length - 1; i++) {
+      for (let j = i + 1; j < textArr.length; j++) {
+        if (textArr[i].toLowerCase() == textArr[j].toLowerCase() && textArr[i] !== "*") {
+          //textArr[j] = "*";
+          for (let k = i + 1; k < textArr.length; k++) {
+            if (textArr[k].toLowerCase() == textArr[i].toLowerCase()) {
+              textArr[k] = "*";
+            }
+          }
+          count++;
+        }
+      }
+    }
+    //alert (textArr);
+    return (count);
+  }
+
+  alert (duplicateCount("Indivisibilities"));
+  </script>
+
+</body>
+
+</html>
