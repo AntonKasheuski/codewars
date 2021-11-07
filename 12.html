@@ -1,0 +1,29 @@
+<!DOCTYPE HTML>
+<html>
+
+<body>
+
+  <script>
+  function getCount(str) {
+  let newStr = '';
+  for (let j = 0; j < str.length; j++) {
+    switch (str[j]) {
+        case 'a':
+        case 'e':
+        case 'i':
+        case 'o':
+        case 'u':
+          break;
+        default:
+          newStr += str[j];
+    }
+  }
+  str = newStr;
+  alert (str); 
+  }
+  getCount('baobab jkk ihgu lih');
+  </script>
+
+</body>
+
+</html>
