@@ -1,0 +1,25 @@
+<!DOCTYPE HTML>
+<html>
+
+<body>
+
+  <script>
+  function anagrams(word, words) {
+    let wordArray = Array.from(word);
+    wordArray.sort();
+
+    let wordsAnsw = [];
+    for (let i = 0; i < words.length; i++) {
+      if (wordArray.join() == Array.from(words[i]).sort().join()) {
+        wordsAnsw.push(words[i])
+      }
+    }
+    return wordsAnsw;
+  }
+
+  alert(anagrams('abba', ['aabb', 'abcd', 'bbaa', 'dada']));
+  </script>
+
+</body>
+
+</html>
