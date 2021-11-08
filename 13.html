@@ -1,0 +1,25 @@
+<!DOCTYPE HTML>
+<html>
+
+<body>
+
+  <script>
+  function findUnique(numbers) {
+    let answ = [];
+    numbers.sort();
+    for (let i = 0; i < numbers.length; i) {
+      if (numbers[i] == numbers[i + 1]) {
+        numbers.shift();
+        numbers.shift();
+      } else {
+        return answ = numbers[i];
+      }
+    }
+  }
+
+  alert(findUnique([3, 5, 5, 4, 4, 3, 2, 2, 9]))
+  </script>
+
+</body>
+
+</html>
