@@ -1,0 +1,37 @@
+<!DOCTYPE HTML>
+<html>
+
+<body>
+
+  <script>
+  function list(names){
+    zeroString = '';
+    if (names.length < 1) {return zeroString}
+
+    let answ = [];
+    for (i = 0; i < names.length; i++){
+      answ.push(names[i].name);
+    }
+    
+    for (let i = 1; i < answ.length; i++) {
+      if (i == names.length - 1) {
+        answ[i] = " & " + answ[i]
+      } else {
+        answ[i] = ", " + answ[i]
+      }
+    }
+
+    let answStr = [];
+    for (i = 0; i < answ.length ; i++) {
+      answStr += answ[i];
+    }
+
+    return answStr;
+  }
+
+  alert(list([]));
+  </script>
+
+</body>
+
+</html>
