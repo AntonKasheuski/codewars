@@ -1,0 +1,74 @@
+<!DOCTYPE HTML>
+<html>
+
+<body>
+  
+  <script>
+  function dirReduc(arr){
+    for (let i = 0; i < arr.length; i++) {
+      switch (arr[i]) {
+        case "NORTH":
+          arr[i] = -1;
+          break;
+        case "SOUTH":
+          arr[i] = 1;
+          break;
+        case "WEST":
+          arr[i] = -2;
+          break;
+        case "EAST":
+          arr[i] = 2;
+          break;
+      }
+    }
+
+    
+      for (let i = 0; i < arr.length - 1; i++) {
+        if (arr[i] + arr[i + 1] == 0) {
+          arr[i] = 0;
+          arr[i + 1] = 0;
+        }
+      }
+      arr = arr.filter(function(n) {
+        const reminder = n;
+        return reminder !== 0;
+      })
+
+      for (let i = 0; i < arr.length - 1; i++) {
+        if (arr[i] + arr[i + 1] == 0) {
+          arr[i] = 0;
+          arr[i + 1] = 0;
+        }
+      }
+      arr = arr.filter(function(n) {
+        const reminder = n;
+        return reminder !== 0;
+      })
+    
+      for (let i = 0; i < arr.length; i++) {
+      switch (arr[i]) {
+        case -1:
+          arr[i] = "NORTH";
+          break;
+        case 1:
+          arr[i] = "SOUTH";
+          break;
+        case -2:
+          arr[i] = "WEST";
+          break;
+        case 2:
+          arr[i] = "EAST";
+          break;
+      }
+    }
+
+    return arr;
+  }
+
+  
+  alert(dirReduc(["NORTH", "SOUTH", "EAST", "WEST", "EAST", "WEST"]));
+  </script>
+
+</body>
+
+</html>
