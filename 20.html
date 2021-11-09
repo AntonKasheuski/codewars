@@ -1,0 +1,23 @@
+<!DOCTYPE HTML>
+<html>
+
+<body>
+  
+  <script>
+  function spongeMeme(sentence) {
+    ans = [];
+    for (let i = 0; i < sentence.length; i = i + 2) {
+      ans.push(sentence[i].toUpperCase());
+      if (i !== sentence.length - 1) {
+        ans.push(sentence[i + 1].toLowerCase());
+      }
+    }
+    return ans.join("");
+  }
+  
+  alert(spongeMeme("colored teens cant Be successful in tech"));
+  </script>
+
+</body>
+
+</html>
