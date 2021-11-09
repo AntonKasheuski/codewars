@@ -1,0 +1,29 @@
+<!DOCTYPE HTML>
+<html>
+
+<body>
+  
+  <script>
+  function comp(array1, array2) {
+    if (array1 == null || array2 == null) {return false}
+
+    let answ = 0;
+    array1.sort((a, b) => a - b);
+    array2.sort((a, b) => a - b);
+    for (let i = 0; i < array1.length; i++) {
+      if (array2[i] == array1[i] ** 2) {
+        answ ++;
+      } else {
+        answ --;
+      }
+    }
+
+    if (answ == array1.length) {return true} {return false}
+  }
+
+  alert(comp([2, 4, 1, 0, 9, 9, 1, 8, 9, 2], [4, 4, 64, 0, 16, 1, 81, 81, 81, 1]))
+  </script>
+
+</body>
+
+</html>
