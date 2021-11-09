@@ -1,0 +1,28 @@
+<!DOCTYPE HTML>
+<html>
+
+<body>
+  
+  <script>
+  function last(x){
+    let arr = x.split(" ");
+    let ans = [];
+    for (let i = 0; i < arr.length; ++i)
+      ans.push(arr[i].split("").reverse().join(""));
+      ans.sort(function(a,b) {
+        if (a[0] > b[0])
+          return 1;
+          return -1;
+        });
+    let a = [];
+    for (let i = 0; i < ans.length; ++i)
+      a.push(ans[i].split("").reverse().join(""));
+    return a;
+  }
+  
+  alert(last('man i need a taxi up to ubud'));
+  </script>
+
+</body>
+
+</html>
