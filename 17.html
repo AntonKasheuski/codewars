@@ -1,0 +1,63 @@
+<!DOCTYPE HTML>
+<html>
+
+<body>
+  
+  <script>
+  function encrypt(text, n) {
+    if (n <= 0 || !text) {return text};
+    let textArray = Array.from(text);
+    let answOdd = [];
+    let answEven = [];
+    
+    for (let j = 1; j <= n; j++) {
+      answOdd = [];
+      answEven = [];
+      for (let i = 1; i < textArray.length; i = i + 2) {
+        answOdd += textArray[i];
+      }
+      for (let i = 0; i < textArray.length; i = i + 2) {
+        answEven += textArray[i];
+      }
+      textArray = answOdd + answEven;
+    }
+
+    return textArray;
+  }
+  alert(encrypt(null, 0));
+
+  function decrypt(encryptedText, n) {
+    if (n <= 0 || !encryptedText.length) {return encryptedText};
+    let decryptedAnsw = encryptedText;
+    let encryptedText1 = [];
+    let encryptedText2 = [];
+    
+    for (let j = 1; j <= n; j++) {
+      if (encryptedText.length % 2 == 0) {
+        encryptedText1 = decryptedAnsw.slice(0, encryptedText.length / 2);
+        encryptedText2 = decryptedAnsw.slice(encryptedText.length / 2, encryptedText.length);
+      }
+      if (encryptedText.length % 2 !== 0) {
+        encryptedText1 = decryptedAnsw.slice(0, Math.floor(encryptedText.length / 2));
+        encryptedText2 = decryptedAnsw.slice(Math.floor(encryptedText.length / 2), encryptedText.length);
+      }
+
+      decryptedAnsw = [];
+      for (let i = 0; i < encryptedText2.length; i++) {
+          if (typeof encryptedText1[i] == "undefined") {
+            decryptedAnsw += encryptedText2[i]
+          }
+          else {
+            decryptedAnsw += encryptedText2[i] + encryptedText1[i];
+          }
+      }
+    }
+  
+    return decryptedAnsw;
+  }
+  alert(decrypt(null, 0));
+  </script>
+
+</body>
+
+</html>
