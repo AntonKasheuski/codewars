@@ -1,0 +1,25 @@
+<!DOCTYPE HTML>
+<html>
+
+<body>
+  
+  <script>
+  function numberOfRectangles(m, n) {
+    let ans = 0;
+    let ans1 = 0;
+    for (let i = 1; i <= m; i++) {
+      ans1 += i; 
+    }
+    
+    for (let j = 1; j <= n; j++){
+      ans = ans + ans1 * j;
+    }
+    return ans;
+  }
+  
+  alert(numberOfRectangles(1, 1));
+  </script>
+
+</body>
+
+</html>
