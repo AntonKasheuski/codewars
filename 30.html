@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html>
+
+<body>
+
+<script>
+
+function cakes(recipe, available) {
+    const recipe_ingredients = [];
+    for (let key in recipe) {
+        recipe_ingredients.push(key);
+    }
+    const recipe_values = [];
+    for (let key in recipe) {
+        recipe_values.push(recipe[key]);
+    }
+    const available_ingredients = [];
+    for (let key in available) {
+        available_ingredients.push(key);
+    }
+    const available_values = [];
+    for (let key in available) {
+        available_values.push(available[key]);
+    }
+
+    const arr = [];
+    for (let i = 0; i < recipe_ingredients.length; i++) {
+        const index = available_ingredients.findIndex(item => item === recipe_ingredients[i])
+        index >= 0 ? arr.push(Math.floor(available_values[index] / recipe_values[i])) : arr.push(0)
+    }
+
+    let result = (arr.sort( (a, b) => a - b ))[0]
+}
+
+</script>
+
+</body>
+
+</html>
