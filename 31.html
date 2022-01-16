@@ -1,0 +1,30 @@
+<!DOCTYPE HTML>
+<html>
+
+<body>
+
+<script>
+
+function changer(str) {
+    const alphabet = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']     
+    const vowels = ['a','e','i','o','u']
+    let newStr = []
+    for (let i = 0; i < str.length; i++) {
+        if (str[i] >= 0 & str[i] <=9) {
+                newStr.push(str[i])
+            } else if (str.toLowerCase()[i] === 'z') {
+                newStr.push('a')
+            } else for (let j = 0; j < alphabet.length; j++) {
+            if (str.toLowerCase()[i] === alphabet[j]) {
+                newStr.push(alphabet[j + 1])
+            }
+        }
+    }
+    return newStr.map(l => (vowels.includes(l) ? l.toUpperCase() : l.toLowerCase())).join('');
+}
+
+</script>
+
+</body>
+
+</html>
