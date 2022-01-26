@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html>
+<body>
+<script>
+    function rot(strng) {
+        return strng.split("\n").reverse().map(el => el.split('').reverse().join('')).join("\n")
+    }
+
+    function selfieAndRot(strng) {
+        let arr = strng.split("\n")
+
+        let dotsString = "";
+        for (let i = 0; i < arr.length; i++) {
+            dotsString += "."
+        }
+
+        return arr.map(el => el + dotsString).join("\n") + "\n" +
+        arr.reverse().map(el => dotsString + el.split('').reverse().join('')).join("\n")
+    }
+
+    function oper(fct, s) {
+        return fct(s)
+    }
+
+</script>
+</body>
+</html>
