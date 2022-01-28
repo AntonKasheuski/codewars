@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html>
+<body>
+<script>
+
+    function getBanknoteList(amountOfMoney) {
+        //...здесь пишем код.
+        console.log(amountOfMoney + ':')
+        let res = []
+        let restOfMoney = amountOfMoney
+        const banknotes = [1000, 500, 100, 50, 20, 10, 5, 2, 1]
+
+        for (let j = 0; j < banknotes.length; j++) {
+            const banknoteCounter = Math.floor(restOfMoney / banknotes[j])
+            console.log(banknoteCounter)
+            if (banknoteCounter > 0) {
+                for (let i = 1; i <= banknoteCounter; i++) {
+                    res.push(banknotes[j])
+                }
+            }
+            restOfMoney = restOfMoney - banknoteCounter * banknotes[j]
+            if (restOfMoney === 0) break
+        }
+        return res
+    }
+
+    console.log(getBanknoteList(3000))
+    console.log(getBanknoteList(2999))
+    console.log(getBanknoteList(23))
+</script>
+</body>
+</html>
