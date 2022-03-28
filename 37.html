@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<html>
+<body>
+<script>
+
+    function dotCalculator (equation) {
+        let arr = equation.split('')
+        let index = arr.indexOf(' ')
+        let num1 = arr.slice(0, index).length
+        let operator = arr[index + 1]
+        let num2 = arr.slice(index + 3, arr.length).length
+        let answerNum = () => {
+            switch (operator) {
+                case "+": return num1 + num2
+                case "-": return num1 - num2
+                case "*": return num1 * num2
+                case "/": return Math.floor(num1 / (num2 - 1))
+            }
+        }
+        let answer = []
+        for (let i = 0; i < answerNum(); i++) {
+            answer.push('.')
+        }
+
+        return answer.join('')
+    }
+
+    console.log(dotCalculator("..... - ....."))
+    console.log(dotCalculator("..... // .."))
+
+</script>
+</body>
+</html>

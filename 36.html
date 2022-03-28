@@ -1,0 +1,22 @@
+<!DOCTYPE HTML>
+<html>
+<body>
+<script>
+
+    function makeValley(arr) {
+        let sortedArr = arr.sort( (a, b) => b - a )
+        let lArr = []
+        let rArr = []
+        for (let i = 0; i < arr.length; i = i + 2) {
+            sortedArr[i] && lArr.push(sortedArr[i])
+            sortedArr[i + 1] && rArr.push(sortedArr[i + 1])
+        }
+        return lArr.concat(rArr.reverse())
+    }
+
+    console.log(makeValley([17, 17, 15, 14, 8, 7, 7, 5, 4, 4, 1]))
+    console.log(makeValley([20, 7, 6, 2]))
+
+</script>
+</body>
+</html>
