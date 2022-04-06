@@ -1,0 +1,20 @@
+<!DOCTYPE HTML>
+<html>
+<body>
+<script>
+
+    function descendingOrder(n){
+        let arr = n.toString().split('').map(el => +el)
+        arr.sort( (a, b) => b - a )
+        return +arr.join('')
+    }
+
+    console.log(descendingOrder(0))
+    console.log(descendingOrder(1))
+    console.log(descendingOrder(111))
+    console.log(descendingOrder(1021))
+    console.log(descendingOrder(123456789))
+
+</script>
+</body>
+</html>
