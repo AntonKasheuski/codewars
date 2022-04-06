@@ -1,0 +1,25 @@
+<!DOCTYPE HTML>
+<html>
+<body>
+<script>
+
+    function solution(str) {
+        let arr = str.split('')
+        if (arr.length % 2 !== 0) {arr.push("_")}
+        for (let i = 0; i < arr.length; i++) {
+            if (i % 2 === 0) {
+                arr[i] = arr[i] + arr[i + 1]
+            } else {
+                arr[i] = 0
+            }
+        }
+        return arr.filter(el => typeof el === "string")
+    }
+
+    console.log(solution("abcdef"))
+    console.log(solution("abcdefg"))
+    console.log(solution(""))
+
+</script>
+</body>
+</html>

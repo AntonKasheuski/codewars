@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+<html>
+<body>
+<script>
+
+    function fridayTheThirteenths(start, end) {
+        let resArr = []
+        if (end === undefined) {end = start}
+        for (let j = start; j <= end; j++) {
+            for (let i = 0; i < 12; i++) {
+                let date = new Date(j, i, 13)
+                if (date.getDay() === 5) {
+                    resArr.push((date.getMonth() + 1) + "/13/" + date.getFullYear())
+                }
+            }
+        }
+        return resArr.join(' ')
+    }
+
+    console.log(fridayTheThirteenths(1999, 2000))
+    console.log(fridayTheThirteenths(1999))
+    console.log(fridayTheThirteenths(2014, 2015))
+
+</script>
+</body>
+</html>
