@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html>
+<body>
+<script>
+
+    function flatten(array) {
+        let answArr = []
+        for (let i = 0; i < array.length; i++) {
+            //debugger
+            if (Array.isArray(array[i])) {
+                if (Array.isArray(...array[i])) {
+                    answArr.push(...flatten(array[i]))
+                } else {
+                    answArr.push(...array[i])
+                }
+            } else {
+                answArr.push(array[i])
+            }
+        }
+        return answArr
+    }
+
+    console.log(flatten([[1], [[2, 3]], [[[4]]]])) // -> [1, 2, 3, 4]
+
+</script>
+</body>
+</html>
