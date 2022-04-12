@@ -1,0 +1,21 @@
+<!DOCTYPE HTML>
+<html>
+<body>
+<script>
+
+    function isStringRotated(source, test) {
+        if (source.length !== test.length) {
+            return false
+        } else {
+            const doubleStr = source + source
+            return doubleStr.includes(test)
+        }
+    }
+
+    console.log(isStringRotated('javascript', 'scriptjava')) // -> true
+    console.log(isStringRotated('javascript', 'iptjavascr')) // -> true
+    console.log(isStringRotated('javascript', 'java')) // -> false
+
+</script>
+</body>
+</html>
