@@ -1,0 +1,28 @@
+<!DOCTYPE HTML>
+<html>
+<body>
+<script>
+
+    function removeDupes(str) {
+        let arr = str.split('')
+            for (let i = 0; i < arr.length; i++) {
+                debugger
+                let char = arr[i]
+                for (let j = arr.length - 1; j > i; j--) {
+                    if (char === arr[j]) {
+                        arr.splice(j, 1)
+                    }
+                }
+            }
+        return arr.join('')
+    }
+
+
+    console.log(removeDupes('abcd')) // -> 'abcd'
+    console.log(removeDupes('aabbccdd')) // -> 'abcd'
+    console.log(removeDupes('abcddbca')) // -> 'abcd'
+    console.log(removeDupes('abababcdcdcd')) // -> 'abcd'
+
+</script>
+</body>
+</html>
